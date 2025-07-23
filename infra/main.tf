@@ -73,13 +73,6 @@ resource "random_integer" "random" {
   max = 50000
 }
 
-resource "aws_cloudfront_origin_access_control" "default" {
-  name                              = "my-s3-oac"
-  origin_access_control_origin_type = "s3"
-  signing_behavior                  = "always"
-  signing_protocol                  = "sigv4"
-}
-
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name = aws_s3_bucket.main.bucket_regional_domain_name

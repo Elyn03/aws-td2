@@ -1,7 +1,7 @@
 variable "bucket_name" {
   type = string
   description = "The bucket name"
-  default = "iim-td-2-dzkofkaoezjgfs"
+  default = "iim-td2-dzkofkaoezjgfs-2"
 }
 
 variable "tags" {
@@ -36,7 +36,7 @@ variable "sync_directories" {
   }))
   description = "List of directories to synchronize with Amazon S3."
   default     = [{
-    local_source_directory = "../build"
+    local_source_directory = "../client/build"
     s3_target_directory    = ""
   }]
 }
